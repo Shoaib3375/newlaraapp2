@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
-
+Route::get('/', function () {
+    return view('welcome', ['name' => 'Samantha']);
+});
 // Route::get('/hello/{key}', [DemoController::class, 'DemoAction'])->middleware([DemoMiddleware::class]);
 // Route::get('/hello2', [DemoController::class, 'DemoAction2']);
 // Route::middleware(['demo'])->group(function () {
@@ -23,4 +25,5 @@ use Illuminate\Support\Facades\Route;
 //     Route::get("/hello3/{key}", [DemoController::class, 'DemoAction3']);
 //     Route::get("/hello4/{key}", [DemoController::class, 'DemoAction4']);
 // });
-Route::get("/hello", [DemoController::class, 'DemoAction'])->middleware([DemoMiddleware::class]);
+// Route::get("/hello", [DemoController::class, 'DemoAction'])->middleware([DemoMiddleware::class]);
+Route::get('/hello',[DemoController::class,'DemoAction'])->middleware('throttle:5,1');

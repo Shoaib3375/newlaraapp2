@@ -20,6 +20,9 @@ class DemoMiddleware {
         //     // return response()->json("Unauthorized", 401);
         //     return redirect('/hello2');
         // }
+        // $request->headers->add(['email'=>'shoaib@gmail.com']);
+        // $request->headers->replace(['email'=>'mesta@gmail.com']);
+        $request->headers->remove('email');
         return $next($request);
     }
 }
