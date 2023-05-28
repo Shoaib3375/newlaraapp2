@@ -12,12 +12,14 @@ class DemoMiddleware {
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response{
-        $key = $request->header('api-key');
-        if ($key == 'abc123') {
-            return $next($request);
-        } else {
-            return response()->json("Unauthorized", 401);
-        }
+    public function handle(Request $request, Closure $next): Response {
+        // $key = $request->key;
+        // if ($key == 'abc123') {
+        //     return $next($request);
+        // } else {
+        //     // return response()->json("Unauthorized", 401);
+        //     return redirect('/hello2');
+        // }
+        return $next($request);
     }
 }
