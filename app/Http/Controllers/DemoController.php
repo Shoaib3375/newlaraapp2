@@ -17,6 +17,9 @@ class DemoController extends Controller {
     // function DemoAction4(): string {
     //     return "Hello4 from redirect";
     // }
+    function __construct() {
+        $this->middleware('demo');
+    }
     function DemoAction(Request $request): array{
         return $request->header();
     }

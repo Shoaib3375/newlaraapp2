@@ -12,7 +12,7 @@ class DemoMiddleware {
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response {
+    public function handle(Request $request, Closure $next): Response{
         // $key = $request->key;
         // if ($key == 'abc123') {
         //     return $next($request);

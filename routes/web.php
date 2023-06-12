@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\DemoController;
-use App\Http\Middleware\DemoMiddleware;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +25,6 @@ Route::get('/', function () {
 //     Route::get("/hello4/{key}", [DemoController::class, 'DemoAction4']);
 // });
 // Route::get("/hello", [DemoController::class, 'DemoAction'])->middleware([DemoMiddleware::class]);
-Route::get('/hello',[DemoController::class,'DemoAction'])->middleware('throttle:5,1');
+// Route::get('/hello', [DemoController::class, 'DemoAction'])->middleware('throttle:5,1');
+// Route::resource('/photo', PhotoController::class);
+Route::get('/home/{num1}/{num2}', [HomeController::class, 'page']);
